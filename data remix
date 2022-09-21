@@ -1,0 +1,84 @@
+global using global::System;
+string ответ;
+string[] yesVariants = { "yes", "y", "true", "да", "еще бы", "lf", "Конечно", "конечно", "Ад" };
+do
+{
+
+    Console.WriteLine("1. Сложить 2 числа\r\n2. Вычесть первое из второго\r\n3. Перемножить два числа\r\n4. Разделить первое на второе\r\n5. Возвести в степень N первое число\r\n6. Найти квадратный корень из числа\r\n7. Найти 1 процент от числа\r\n8. Найти факториал из числа\r\n9. Выйти из программы");
+    Console.WriteLine("Выберите действие");
+    string Operation = Console.ReadLine();
+
+
+    if (Operation == "9")
+    {
+        Console.WriteLine("Вы вышли из программы ");
+        return;
+    }
+    if (Operation == "9")
+    {
+        Console.WriteLine("Вы вышли из программы ");
+        return;
+    }
+
+    Console.WriteLine("Введите первое число:");        
+    int a1 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите второе число:");
+    int b1 = Convert.ToInt32(Console.ReadLine());
+
+    if (Operation == "1")
+    {
+        Console.Write("Результат  = ");
+        Console.Write(a1 + b1);
+    }
+    if (Operation == "2")
+    {
+        Console.Write("Результат  = ");
+        Console.Write(a1 - b1);
+    }
+    if (Operation == "3")
+    {
+        Console.Write("Результат  = ");
+        Console.Write(a1 * b1);
+    }
+    if (Operation == "4")
+    {
+        Console.Write("Результат  = ");
+        Console.Write(a1 / b1);
+    }
+    if (Operation == "5")
+    {
+        Console.Write("Введите степень N");
+        int N = Convert.ToInt32(Console.ReadLine());
+        Console.Write(Math.Pow(a1, N));
+    }
+    if (Operation == "6")
+    {
+        double d = Math.Sqrt(a1);
+        Console.Write("корень из первого числа  = ");
+        Console.Write(d);
+        double c = Math.Sqrt(b1);
+        Console.Write("корень из второго числа  = ");
+        Console.Write(c);
+    }
+    if (Operation == "7")
+    {
+        Console.Write("Результат  = ");
+        Console.Write(b1 / 100);
+        Console.Write("1% от первого числа  = ");
+        Console.Write(a1 / 100);
+    }
+    if (Operation == "8")
+    {
+        int c = 1;
+        for (int i = 1; a1 >= i; ++i)
+        {
+            c = c * i;
+        }
+        Console.WriteLine(c);
+    }
+
+    Console.WriteLine("\nПовторить?(да)(нет) ");
+  ответ = Console.ReadLine();
+
+} while (yesVariants.Contains(ответ, StringComparer.OrdinalIgnoreCase));
+// проверка по массиву ответов
